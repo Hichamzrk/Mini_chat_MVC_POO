@@ -1,7 +1,7 @@
 <?php  
 	namespace App\Models;
 
-	class MessagesModel extends Model
+	class MessageModel extends Model
 	{
 		protected $id;
 		protected $id_user;
@@ -9,7 +9,7 @@
 
 		public function __construct()
     	{
-        	$this->table = 'messages';
+        	$this->table = 'Message';
     	}
 	    /**
 	     * Obtenir la valeur de id
