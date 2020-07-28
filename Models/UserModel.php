@@ -12,8 +12,19 @@
         	$this->table = 'User';
     	}
 
+    	//Selectionne tous à partir du pseudo
 		public function findOneByPseudo($pseudo){
 			return $this->requete("SELECT * FROM {$this->table} WHERE pseudo = ?",[$pseudo])->fetch();
+		}
+
+	
+		//Vérifie le pseudo
+		public function pseudoVerify($pseudo){
+			$regex = "#[^a-zA-Z0-9]#";
+			if (strlen($pseudo) <= 20 AND !preg_match($regex, $pseudo) AND stripos($pseudo, "admin") === FALSE) {
+				
+				return true;
+			}
 		}
 		
 		public function getId_user():int
@@ -74,11 +85,5 @@
 	        return $this;
 	    }
 
-	    public function setSession(){
-	    	$_SESSION['user'] = [
-				'user_id' => $this->user_id,
-				'email' => $this->pseudo
-	    	];
-	    }
 	}
 ?>

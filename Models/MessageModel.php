@@ -4,6 +4,7 @@
 	class MessageModel extends Model
 	{
 		protected $id;
+		protected $pseudo;
 		protected $id_user;
 		protected $message;
 
@@ -32,22 +33,22 @@
 	    }
 
 	    /**
-	     * Obtenir la valeur de id_user
+	     * Obtenir la valeur de Pseudo
 	     */ 
-	    public function getId_user():int
+	    public function getPseudo():string
 	    {
-	        return $this->id_user;
+	        return Pseudo;
 	    }
 
 	    /**
-	     * Définir la valeur de id_user
+	     * Définir la valeur de Pseudo
 	     *
 	     * @return  self
 	     */ 
 	    
-	    public function setId_user(int $id_user):self
+	    public function setPseudo(string $pseudo):self
 	    {
-	        $this->id_user = $id_user;
+	        $this->pseudo = $pseudo;
 
 	        return $this;
 	    }
@@ -71,5 +72,6 @@
 
 	        return $this;
 	    }
+	    
 	}
 ?>

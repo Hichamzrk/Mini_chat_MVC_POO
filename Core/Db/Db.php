@@ -32,7 +32,7 @@
 				die($e->getMessage());
 			}
 		}
-
+		//Instancie la classe, disponible partout
 		public static function getInstance():self{
 			if (self::$instance === null) 
 				{

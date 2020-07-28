@@ -47,7 +47,7 @@
 		//Methode selectionne tous les enregistrement d'une table
 		public function findAll()
 		{
-			$query = $this->requete('SELECT * FROM '.$this->table);
+			$query = $this->requete('SELECT * FROM '.$this->table.' ORDER BY id_message DESC LIMIT 6');
 			return $query->fetchAll();
 		}
 

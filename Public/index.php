@@ -16,7 +16,7 @@
 	//On instancie la router Main
 	$app = new Main();
 
-	//On démarre l'application
+	//On démarre l'application depuis le router Main
 	$app->start();
 
 ?>
