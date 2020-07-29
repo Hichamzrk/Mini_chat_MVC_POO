@@ -59,7 +59,7 @@
 
 			//On boucle pour "éclater le tableau de critère"
 			foreach ($criteres as $champ => $valeur) {
-				$champs[] = "$champs = ?";
+				$champs[] = "$champ = ?";
 				$valeurs[] = $valeur;
 			}
 
@@ -100,6 +100,12 @@
 
 		    // On exécute la requête
 		    return $this->requete('INSERT INTO '.$this->table.' ('. $liste_champs.')VALUES('.$liste_inter.')', $valeurs);
+
+		}
+		
+		//Selectionne tous à partir d'un element
+		public function findOneByPseudo($element){
+			return $this->requete("SELECT * FROM {$this->table} WHERE pseudo = ?",[$element])->fetch();
 		}
 	}
 

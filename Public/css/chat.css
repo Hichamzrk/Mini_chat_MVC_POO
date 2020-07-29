@@ -1,0 +1,163 @@
+body
+{
+	background-color: #4e5866;
+}
+
+
+img 
+{
+  max-width: 5%;
+  height: auto;
+}
+
+em
+{
+	font-size: 10px;
+	color: #ffffff;
+}
+
+article
+{
+	margin-left: 25%;
+	margin-right: 25%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	border: solid 1px;
+	border-radius: 30px;
+	padding: 2%;
+	background: #353b45;
+	box-shadow: 6px 6px 25px -5px rgba(36,36,36,1);
+	max-height: 800px;
+	overflow: overlay;
+}
+
+div p
+{
+	border-radius: 30px;
+	background: #f26666;
+	padding : 3%;
+	box-shadow: 6px 6px 25px -5px rgba(66,66,66,1);
+	margin-bottom: 0px;
+	color: #FFFFFF;
+	font-family: 'Dosis', sans-serif;
+	font-size: 1.2em;
+}
+
+strong
+{
+	font-size: 1.5em;
+	color: black;
+	padding-right: 2%;
+
+}
+
+.message_area{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 5%;
+
+}
+
+input[type=textarea]{
+	background-color: #343a45;
+	border-radius: 30px;
+	font-size: 2em;
+	padding-left: 1%;
+	border: 0px;
+	width: 45%;
+	color: #FFFFFF;
+	padding-left: 3%;
+}
+
+.like{
+	display: flex;
+	justify-content: flex-end;
+}
+
+input[type=image]{
+	float: right;
+	width: 5%;
+	margin: 0;
+
+}
+
+input[type=image], select{
+	color: #FFFFFF;
+}
+
+h2{
+	color: #FFFFFF;
+	font-size: 1em;
+	margin: 0px;
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	font-family: 'Dosis', sans-serif;
+}
+.logout{
+	display: flex;
+	justify-content: flex-end;
+}
+button
+{
+	text-align: center;
+	background-color: #f26666;
+	border: solid 1px #FFFFFF;
+	box-shadow:0px;
+	width: 100px;
+	height: 50px;
+	color: #FFFFFF;
+	border-radius: 30px;
+	font-family: 'Dosis', sans-serif;
+}
+
+button:hover
+{
+	border: solid 1px #f26666;
+}
+
+textarea:focus, input:focus, button:focus{
+    outline: none;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  display: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #4e5866;
+  border-radius: 0px;
+}
+
+@media (max-width: 1000px){
+
+	article
+	{
+	margin-left: 5%;
+	margin-right: 5%;
+	}
+
+	input[type=image]{
+	float: right;
+	width: 15%;
+	margin: 0;
+	}
+
+
+	input[type=textarea]{
+		width: 80%;
+	}
+
+	h2{
+		margin-right: 5%;
+	}
+}

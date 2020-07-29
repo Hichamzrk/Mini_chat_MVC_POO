@@ -1,0 +1,112 @@
+
+body{
+	background-color: #735566;
+}
+
+.connexion{
+	margin-top: 15%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    height: 300px; 
+	background-color: #f26666;
+	border-radius: 50px;
+}
+
+input{
+	border:0px;
+	width: 85%;
+	margin-left: auto;
+    margin-right: auto;
+    height: 20%;
+    outline:0px;
+    background-color: #f26666;
+    color: #FFFFFF;
+    font-family: 'Dosis', sans-serif;
+    font-size: 2em;
+}
+
+
+#pseudo{
+	border : solid 2px #FFFFFF;
+	margin-top: 7%;
+	border-radius: 50px;
+	padding-left: 5%;
+
+}
+
+#password{
+	border : solid 2px #FFFFFF;
+	border-radius: 50px;
+	margin-top: 7%;
+	margin-bottom: 7%;
+	padding-left: 5%;
+}
+
+
+.login{
+	background-color:#FFFFFF ;
+	color: #f26666;
+	margin-bottom: 7%;
+	border-radius: 50px;
+	font-size: 1.2em;
+}
+
+.login:hover{
+	background-color: #f2cdc0;
+
+}
+
+::placeholder{
+	color: #d9d9d9;
+}
+
+a{	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #d9d9d9;
+	font-family: 'Dosis', sans-serif;
+}
+
+a:hover
+{
+	color: #f22b22;
+}
+
+p{
+	text-align: center;
+	color: red;
+	font-family: 'Dosis', sans-serif;
+}
+
+textarea:focus, input:focus, button:focus{
+    outline: none;
+}
+
+@media (max-width: 1000px){
+
+	input{
+	border:0px;
+	margin-left: auto;
+    margin-right: auto;
+    outline:0px;
+    background-color: #f26666;
+    color: #FFFFFF;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1em;
+	}
+
+	.connexion{
+		width: 90%;
+	}
+}
+
+
+
+
+
+

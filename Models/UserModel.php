@@ -11,12 +11,6 @@
     	{
         	$this->table = 'User';
     	}
-
-    	//Selectionne tous à partir du pseudo
-		public function findOneByPseudo($pseudo){
-			return $this->requete("SELECT * FROM {$this->table} WHERE pseudo = ?",[$pseudo])->fetch();
-		}
-
 	
 		//Vérifie le pseudo
 		public function pseudoVerify($pseudo){
