@@ -65,16 +65,16 @@
 
 			//On transforme le tableau en chaîne de caractère séparée par des AND
 
-			$liste_champs = implode('AND', $champs);
+			$liste_champs = implode('AND ', $champs);
 
 			//On exécute la requête
-			return $this->requete("SELECT * FROM {$this->table} WHERE $list_champs", $valeurs)->fetchAll();
+			return $this->requete("SELECT * FROM {$this->table} WHERE $liste_champs", $valeurs);//->fetchAll();
 		}
 
 		//Methode de recherche d'un élement
-		public function find(int $id)
+		public function find($id)
 		{
-			return $this->requete("SELECT * FROM{$this->table} WHERE id = $id")->fetch();
+			return $this->requete("SELECT * FROM {$this->table} WHERE id_message = $id")->fetch();
 		}
 
 		//Methode de création d'un élément
@@ -106,6 +106,14 @@
 		//Selectionne tous à partir d'un element
 		public function findOneByPseudo($element){
 			return $this->requete("SELECT * FROM {$this->table} WHERE pseudo = ?",[$element])->fetch();
+		}
+
+		//Compte le nombre d'element selon critére
+		public function Numberverify($donnes){
+			$query = $this->findBy($donnes);
+			$NumberVerify = $query->rowCount();
+				
+			return $NumberVerify;
 		}
 	}
 

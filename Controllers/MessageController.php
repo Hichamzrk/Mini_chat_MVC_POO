@@ -19,8 +19,12 @@
 				$message = new MessageModel;
 				
 				//On hydrate les données dans la classe MessageModel
-				$message->setMessage($_POST['message']);
-				$message->setPseudo($_SESSION['pseudo']);
+				$donnes = [
+					'message'=>strip_tags($_POST['message']),
+					'pseudo'=>$_SESSION['pseudo']
+				];
+
+				$message->hydrate($donnes);
 				
 				//On enregistre les donnés dans le modelMessage
 				$message-> create();
@@ -41,13 +45,22 @@
 		}
 
 		public function aime($id){
-			if (isset($id)) {
+			$message= new MessageModel;
+			$donnes = ['id_message'=>$id[0]];
+			
+			$messages = $message->Numberverify($donnes);
+			
+			if (isset($id) AND $messages === 1) {
 				$aime = new AimeModel;
+				$donnes = [
+					'id_message'=>$id[0],
+					'pseudo'=>$_SESSION['pseudo']
+				];
 
-				$aime->setid_Message($id[0]);
-				$aime->setPseudo($_SESSION['pseudo']);
+				$aime->hydrate($donnes);
+				
 
-				$aimes = $aime->NumeberLike($id[0], $_SESSION['pseudo']);
+				$aimes = $aime->Numberverify($donnes);
 
 				if ($aimes >= 1) {
 					header('location:/message');
@@ -56,7 +69,9 @@
 				$aime->create();
 
 				header('location:/message');
+				exit;
 			}
+			echo "erreur";
 		}
 	}
 ?>

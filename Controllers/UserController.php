@@ -64,14 +64,17 @@ use App\Models\UserModel;
 				if(!$UserArray AND $UserModel->pseudoVerify($pseudo)){
 				    
 				    //On hydrate les données dans la classe UserModel
-				    $UserModel->setPseudo($pseudo);
-				    $UserModel->setPassword(password_hash($password, PASSWORD_ARGON2I));
+				    $donnes = [
+				    	'pseudo'=>$pseudo,
+				    	'password'=>password_hash($password, PASSWORD_DEFAULT)
+				    ];
+				    $UserModel->hydrate($donnes);
+				  
+				    //On créer le user dans la bdd
+				    $UserModel->create();
 				    
 				    //On créer la session 
 				    $_SESSION['pseudo'] = $pseudo;
-				    
-				    //On créer le user dans la bdd
-				    $UserModel->create();
 				    
 				    //On redirectionne sur la page message
 				    header('Location: /message');

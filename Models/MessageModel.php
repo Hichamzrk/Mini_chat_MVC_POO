@@ -5,7 +5,6 @@
 	{
 		protected $id;
 		protected $pseudo;
-		protected $id_user;
 		protected $message;
 
 		public function __construct()
@@ -25,7 +24,7 @@
 	     *
 	     * @return  self
 	     */ 
-	    public function setId(int $id):self
+	    public function setid(int $id):self
 	    {
 	        $this->id = $id;
 
@@ -35,7 +34,7 @@
 	    /**
 	     * Obtenir la valeur de Pseudo
 	     */ 
-	    public function getPseudo():string
+	    public function getpseudo():string
 	    {
 	        return Pseudo;
 	    }
@@ -46,7 +45,7 @@
 	     * @return  self
 	     */ 
 	    
-	    public function setPseudo(string $pseudo):self
+	    public function setpseudo(string $pseudo):self
 	    {
 	        $this->pseudo = $pseudo;
 
@@ -56,7 +55,7 @@
 	    /**
 	     * Obtenir la valeur de message
 	     */ 
-	    public function getMessage():string
+	    public function getmessage():string
 	    {
 	        return $this->message;
 	    }
@@ -66,7 +65,7 @@
 	     *
 	     * @return  self
 	     */ 
-	    public function setMessage(string $message):self
+	    public function setmessage(string $message):self
 	    {
 	        $this->message = $message;
 

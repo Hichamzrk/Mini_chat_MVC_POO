@@ -21,7 +21,7 @@
 			}
 		}
 		
-		public function getId_user():int
+		public function getid_user():int
 	    {
 	        return $this->id_user;
 	    }
@@ -31,7 +31,7 @@
 	     *
 	     * @return  self
 	     */ 
-	    public function setId_user(int $id_user):self
+	    public function setid_user(int $id_user):self
 	    {
 	        $this->id_user = $id_user;
 
@@ -41,7 +41,7 @@
 	    /**
 	     * Obtenir la valeur de pseudo
 	     */ 
-	    public function getPseudo():string
+	    public function getpseudo():string
 	    {
 	        return $this->pseudo;
 	    }
@@ -52,7 +52,7 @@
 	     * @return  self
 	     */ 
 	    
-	    public function setPseudo(string $pseudo):self
+	    public function setpseudo(string $pseudo):self
 	    {
 	        $this->pseudo = $pseudo;
 
@@ -62,7 +62,7 @@
 	    /**
 	     * Obtenir la valeur de password
 	     */ 
-	    public function getPassword():string
+	    public function getpassword():string
 	    {
 	        return $this->password;
 	    }
@@ -72,7 +72,7 @@
 	     *
 	     * @return  self
 	     */ 
-	    public function setPassword(string $password):self
+	    public function setpassword(string $password):self
 	    {
 	        $this->password = $password;
 

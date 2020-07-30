@@ -13,26 +13,24 @@
 			$this->table = 'Aime';
 		}
 
-		public function NumeberLike($id_message, $pseudo = null){
-			if ($pseudo === null) {
-				$sql = "SELECT * FROM Aime WHERE id_message = ?";
-				$attributs = $id_message;
-
-				$query = $this->requete($sql, [$attributs]);
+		public function NumeberLike($id_message){
+			
+			if ($this->pseudo == null) {
+				$donnes = [
+					'id_message'=>$id_message
+				];
 				
-				$NumeberLike = $query->rowCount();
 			}
 			else{
-				$sql = "SELECT * FROM Aime WHERE id_message = ? AND pseudo = ?";
-				$attributs = $id_message;
-				$attributs = array($id_message, $pseudo);
-
-				$query = $this->requete($sql, $attributs);
-				
-				$NumeberLike = $query->rowCount();
-
+				$donnes = [
+					'id_message'=>$id_message,
+					'pseudo'=>$this->pseudo
+				];
 			}
 
+			$query = $this->findBy($donnes);
+			$NumeberLike = $query->rowCount();
+				
 			return $NumeberLike;
 		}
 
@@ -40,7 +38,7 @@
 		/**
 	     * Obtenir la valeur de id
 	     */ 
-	    public function getId_like():int
+	    public function getid_like():int
 	    {
 	        return $this->id_like;
 	    }
@@ -50,7 +48,7 @@
 	     *
 	     * @return  self
 	     */ 
-	    public function setId(int $id_like):self
+	    public function setid(int $id_like):self
 	    {
 	        $this->id_like = $id_like;
 
@@ -60,7 +58,7 @@
 	    /**
 	     * Obtenir la valeur de Pseudo
 	     */ 
-	    public function getPseudo():string
+	    public function getpseudo():string
 	    {
 	        return pseudo;
 	    }
@@ -71,7 +69,7 @@
 	     * @return  self
 	     */ 
 	    
-	    public function setPseudo(string $pseudo):self
+	    public function setpseudo(string $pseudo):self
 	    {
 	        $this->pseudo = $pseudo;
 
@@ -81,7 +79,7 @@
 	    /**
 	     * Obtenir la valeur de message
 	     */ 
-	    public function getId_message():int
+	    public function getid_message():int
 	    {
 	        return $this->id_message;
 	    }
@@ -91,7 +89,7 @@
 	     *
 	     * @return  self
 	     */ 
-	    public function setid_Message(int $id_message):self
+	    public function setid_message(int $id_message):self
 	    {
 	        $this->id_message = $id_message;
 
