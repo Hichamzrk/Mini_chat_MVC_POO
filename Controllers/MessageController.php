@@ -15,7 +15,7 @@
 				exit;
 			}
 			//On récupére le message en POST
-			if (isset($_POST['message'])) {
+			if (isset($_POST['message']) AND !empty($_POST['message'])) {
 				$message = new MessageModel;
 				
 				//On hydrate les données dans la classe MessageModel
@@ -45,15 +45,19 @@
 		}
 
 		public function aime($id){
+			//On instancie la classe Message Model
 			$message= new MessageModel;
-			$donnes = ['id_message'=>$id[0]];
+			$id = strip_tags($id[0]);
+
+			//On vérifie si le message aimé éxiste bien
+			$donnes = ['id_message'=> $id];
 			
 			$messages = $message->Numberverify($donnes);
 			
-			if (isset($id) AND $messages === 1) {
+			if (isset($id) AND !empty($id) AND $messages === 1) {
 				$aime = new AimeModel;
 				$donnes = [
-					'id_message'=>$id[0],
+					'id_message'=> $id,
 					'pseudo'=>$_SESSION['pseudo']
 				];
 
@@ -62,10 +66,13 @@
 
 				$aimes = $aime->Numberverify($donnes);
 
+				//On vérifie si le message a déja été aimé
 				if ($aimes >= 1) {
 					header('location:/message');
 					exit;
 				}
+
+				//On créer dans la bdd
 				$aime->create();
 
 				header('location:/message');
