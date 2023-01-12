@@ -13,8 +13,8 @@
 
 		//Information de connexion
 		private const DBHOST = 'localhost';
+		private const DBPASS = '';
 		private const DBUSER = 'root';
-		private const DBPASS = 'root';
 		private const DBNAME = 'Mini_chat';
 
 		//connexion à la bdd

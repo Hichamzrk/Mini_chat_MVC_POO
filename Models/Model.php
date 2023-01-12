@@ -92,6 +92,9 @@
 		            $inter[] = "?";
 		            $valeurs[] = $valeur;
 		        }
+		        echo '<pre>';
+		        var_dump($this);
+		        echo '</pre>';
 		    }
 
 		    // On transforme le tableau "champs" en une chaine de caractères

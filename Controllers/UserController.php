@@ -77,12 +77,12 @@ use App\Models\UserModel;
 				    $_SESSION['pseudo'] = $pseudo;
 				    
 				    //On redirectionne sur la page message
-				    header('Location: /message');
-					exit;
+				    //header('Location: /message');
+					//exit;
 				}
 				
 				//Sinon on redirection sur la page register
-				header('Location: /user/register');
+				//header('Location: /user/register');
 			}
 		}
 
